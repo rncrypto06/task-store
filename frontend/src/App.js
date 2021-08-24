@@ -33,13 +33,11 @@ function App() {
 
   return (
     <div className='container'>
-      <h1>String Store (BSC Blockchain)</h1>
-      <h2>Stored String:</h2>
-      <p>{data.toString()}</p>
-
+      <h1>Task Store (BSC Blockchain)</h1>
+      
       <form className='add-form' onSubmit={(e) => updateData(e)}>
         <div className='form-control'>
-          <label>Stored String:</label>
+          <label>Enter Task to be stored:</label>
           <input
             type='text'
             className='form-control'
@@ -54,6 +52,8 @@ function App() {
           Submit
         </button>
       </form>
+
+      <h3>Currently Stored Task: "{data.toString()}"</h3>
     </div>
   );
 }

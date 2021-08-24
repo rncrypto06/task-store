@@ -10,12 +10,12 @@ const getBlockchain = () =>
             const networkId = await provider.request({ method: 'net_version' });
             provider = new ethers.providers.Web3Provider(provider);
             const signer = provider.getSigner();
-            const stringStore = new Contract(
+            const taskStore = new Contract(
                 TaskStore.networks[networkId].address,
                 TaskStore.abi,
                 signer
             );
-            resolve({ stringStore });
+            resolve({ taskStore });
             return;
         }
         reject('Install Metamask.');
